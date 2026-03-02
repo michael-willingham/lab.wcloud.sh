@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://lab.wcloud.sh/pr-preview/pr-6/sitemap.xml
