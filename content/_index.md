@@ -12,7 +12,7 @@ This site is a living document. I use it to track what I'm building, what I'm le
 
 | Node | Hardware | CPU | RAM | Role |
 |------|----------|-----|-----|------|
-| `talos-76w-3r0` | Custom PC | AMD Ryzen 9 9950X3D (16c/32t) | 192 GB DDR5 | Control plane + workloads |
+| `talos-76w-3r0` | Custom PC | AMD Ryzen 9 9950X3D (16c/32t) | 192 GB DDR5 | Control plane + workloads + GPU |
 | `talos-7aj-lwl` | NVIDIA DGX Spark | GB10 Grace Blackwell (20c ARM) | 128 GB | Control plane + GPU workloads |
 | `talos-ysi-4k0` | NVIDIA DGX Spark | GB10 Grace Blackwell (20c ARM) | 128 GB | Control plane + GPU workloads |
 

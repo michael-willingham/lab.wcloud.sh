@@ -46,9 +46,10 @@ The custom PC fills a different role:
 
 - **AMD Ryzen 9 9950X3D** — 16 cores / 32 threads with 3D V-Cache for cache-heavy workloads
 - **192 GB DDR5** — the largest memory pool in the cluster
+- **NVIDIA RTX 5070 Ti** — for AMD64 GPU workloads (CUDA, inference, dev/test)
 - **AMD64** — runs workloads that don't have ARM64 builds
 
-It handles most of the platform services (Keycloak, ArgoCD, Grafana, etc.) while the DGX Sparks focus on GPU and AI workloads.
+It handles most of the platform services (Keycloak, ArgoCD, Grafana, etc.) and can also run GPU workloads on the 5070 Ti, while the DGX Sparks focus on heavier AI training.
 
 ## Operating system
 
