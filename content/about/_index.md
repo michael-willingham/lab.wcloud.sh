@@ -22,9 +22,10 @@ See the [infrastructure](/infrastructure/) section for the full breakdown.
 
 ## About me
 
-I'm Michael Willingham. I build things to understand them.
+I'm Michael Willingham — software engineer on the Fleet Automation team at [NorthMark Compute & Cloud (NMC2)](https://nmc2.com), a high-performance compute infrastructure company building one of the largest private GPU clusters in the world at their 400MW facility in Spartanburg, SC. Outside of work, I run this homelab to go deeper on the same kinds of problems: Kubernetes, GPU scheduling, RDMA networking, and platform engineering.
 
-- [GitHub](https://github.com/willingham-cloud)
+- [GitHub](https://github.com/michael-willingham)
+- [LinkedIn](https://www.linkedin.com/in/michaelwillingham/)
 
 ## About the tech
 
