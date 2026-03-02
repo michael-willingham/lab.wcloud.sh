@@ -56,7 +56,7 @@ The `dgx-qsfp` NetworkAttachmentDefinition configures the secondary interface:
 
 ## How it fits together
 
-```mermaid
+{{< mermaid >}}
 graph TD
     subgraph "DGX Spark #1"
         Pod1["Training Pod"] --> VF1["SR-IOV VF<br/>net1: 10.100.0.x"]
@@ -71,7 +71,7 @@ graph TD
     end
 
     CX1 ---|"200 Gbps QSFP DAC<br/>RDMA / RoCE v2"| CX2
-```
+{{< /mermaid >}}
 
 When a pod on DGX Spark #1 needs to communicate with a pod on DGX Spark #2 for distributed training:
 

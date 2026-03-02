@@ -31,10 +31,10 @@ The unified memory architecture means the GPU can access the full 128 GB without
 
 The two DGX Sparks are directly connected via a **QSFP56 DAC (Direct Attach Copper)** cable between their ConnectX-7 NICs. No switch in the path — it's a point-to-point 200 Gbps link.
 
-```mermaid
+{{< mermaid >}}
 graph LR
     DGX1["DGX Spark #1<br/>talos-7aj-lwl<br/>128 GB"] --- QSFP["200 Gbps QSFP DAC<br/>ConnectX-7 ↔ ConnectX-7"] --- DGX2["DGX Spark #2<br/>talos-ysi-4k0<br/>128 GB"]
-```
+{{< /mermaid >}}
 
 This link supports **RDMA (Remote Direct Memory Access)** via RoCE v2, enabling GPU-Direct RDMA for NCCL multi-node training. The ConnectX-7 NICs are configured with **SR-IOV** to present Virtual Functions to pods, so containers can get direct access to the 200 Gbps link without going through the kernel network stack.
 
@@ -62,7 +62,7 @@ All nodes run **Talos Linux** — an immutable, API-driven Kubernetes OS. Key ch
 
 ## Network topology
 
-```mermaid
+{{< mermaid >}}
 graph TD
     Internet["Internet"] --> Router["Home Router"]
     Router --> Switch["Network Switch<br/>192.168.4.0/24"]
@@ -74,7 +74,7 @@ graph TD
     style DGX1 fill:#76b900,color:#000
     style DGX2 fill:#76b900,color:#000
     style PC fill:#0078d4,color:#fff
-```
+{{< /mermaid >}}
 
 Each node connects to the home network via 1 GbE for management and general traffic. The 200 Gbps link is exclusively for inter-DGX GPU communication.
 

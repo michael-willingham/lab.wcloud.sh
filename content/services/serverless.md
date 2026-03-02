@@ -24,11 +24,11 @@ The default broker is **Kafka-backed** via `eventing-kafka-broker`, which means:
 - Triggers subscribe to event types and route them to Knative Services
 - The full Strimzi Kafka cluster provides the backbone
 
-```mermaid
+{{< mermaid >}}
 graph LR
     Source["Event Source"] -->|CloudEvent| Broker["Knative Broker<br/>(Kafka-backed)"]
     Broker -->|Trigger filter| Svc1["Knative Service A"]
     Broker -->|Trigger filter| Svc2["Knative Service B"]
-```
+{{< /mermaid >}}
 
 This integration is one of the more elegant parts of the cluster — serverless functions triggered by durable event streams.

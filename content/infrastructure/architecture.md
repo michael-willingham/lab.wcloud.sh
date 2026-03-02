@@ -10,7 +10,7 @@ summary: "How the cluster is organized — FluxCD dependency chains, traffic flo
 
 Everything in the cluster is deployed via FluxCD Kustomizations, organized in a dependency chain that ensures components are created in the right order:
 
-```mermaid
+{{< mermaid >}}
 graph TD
     NS["namespaces"] --> CRDs["crds"]
     NS --> Routes["routes"]
@@ -23,7 +23,7 @@ graph TD
     Operators --> Security["security<br/><small>Keycloak</small>"]
     Security --> Argo["argo<br/><small>ArgoCD, Workflows,<br/>Events</small>"]
     Observability --> VPA["vpa<br/><small>VPA resources</small>"]
-```
+{{< /mermaid >}}
 
 Each box is a FluxCD Kustomization pointing to a directory in the [Git repository](https://github.com/willingham-cloud/k8s-config). Arrows represent `dependsOn` relationships — a Kustomization won't reconcile until its dependencies are healthy.
 
@@ -38,7 +38,7 @@ Each box is a FluxCD Kustomization pointing to a directory in the [Git repositor
 
 External traffic enters the cluster through a single path:
 
-```mermaid
+{{< mermaid >}}
 graph LR
     Client["Client<br/>(on Tailnet)"] --> DNS["Cloudflare DNS<br/>*.wcloud.sh"]
     DNS --> TS["Tailscale<br/>Subnet Router"]
@@ -49,7 +49,7 @@ graph LR
 
     CM["cert-manager"] -.->|"TLS certs"| GW
     ExtDNS["external-dns"] -.->|"DNS records"| DNS
-```
+{{< /mermaid >}}
 
 Key points:
 
