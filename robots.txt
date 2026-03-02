@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lab.wcloud.sh/sitemap.xml
