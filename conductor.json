@@ -1,0 +1,6 @@
+{
+    "scripts": {
+        "setup": "hugo mod get",
+        "run": "hugo serve -D"
+    }
+}
