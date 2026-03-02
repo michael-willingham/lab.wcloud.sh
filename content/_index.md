@@ -26,7 +26,7 @@ The cluster runs a full platform stack — not because everything is needed, but
 
 - **GitOps:** FluxCD reconciles everything from Git. No `kubectl apply`, ever.
 - **Networking:** Cilium (eBPF CNI), MetalLB (L2), kgateway (Gateway API / Envoy), Tailscale subnet routing
-- **Storage:** Longhorn with the v2 data engine
+- **Storage:** Longhorn (v1 data engine)
 - **Identity:** Keycloak providing OIDC SSO for every web UI in the cluster
 - **Observability:** VictoriaMetrics, Grafana, Jaeger (OpenTelemetry), Hubble
 - **Messaging:** Kafka (Strimzi, KRaft mode), NATS (JetStream), RabbitMQ
