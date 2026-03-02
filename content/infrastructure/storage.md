@@ -3,20 +3,20 @@ title: "Storage"
 date: 2026-03-01
 weight: 40
 tags: ["storage", "longhorn"]
-summary: "Longhorn v2 data engine for distributed block storage."
+summary: "Longhorn v1 data engine for distributed block storage."
 ---
 
 ## Longhorn
 
 [Longhorn](https://longhorn.io/) provides distributed block storage with replicated volumes and snapshots.
 
-### v2 data engine
+### v1 data engine
 
-The cluster runs with the **v2 data engine enabled** (`defaultSettings.v2DataEngine: true`). The v2 engine uses SPDK (Storage Performance Development Kit) for improved I/O performance compared to the legacy iSCSI-based v1 engine.
+The cluster runs with the **v1 (iSCSI-based) data engine**. The v2 engine (SPDK) is not in use.
 
 ### Resource tuning
 
-On the DGX Spark nodes (20 cores each), the default Longhorn instance manager CPU reservation was too aggressive. The setting `guaranteedInstanceManagerCPU` is tuned to `{"v1":"5","v2":"5"}` to reduce per-instance-manager reservation.
+On the DGX Spark nodes (20 cores each), the default Longhorn instance manager CPU reservation was too aggressive. The setting `guaranteedInstanceManagerCPU` is tuned to `5` to reduce per-instance-manager reservation.
 
 ### Consumers
 

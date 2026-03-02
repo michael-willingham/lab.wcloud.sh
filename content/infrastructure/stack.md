@@ -39,7 +39,7 @@ A complete reference of every component running in the cluster.
 
 | Component | Namespace | Notes |
 |-----------|-----------|-------|
-| Longhorn | `longhorn-system` | v2 data engine (SPDK) |
+| Longhorn | `longhorn-system` | v1 data engine |
 
 ## Identity & secrets
 
