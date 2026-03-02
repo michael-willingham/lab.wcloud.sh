@@ -25,22 +25,34 @@ The two DGX Sparks are connected via a **200 Gbps QSFP DAC** direct-attach cable
 The cluster runs a full platform stack — not because everything is needed, but because each component is something I wanted to understand deeply.
 
 **GitOps:** FluxCD reconciles everything from Git. No `kubectl apply`, ever.
+
 **Networking:** Cilium (eBPF CNI), MetalLB (L2), kgateway (Gateway API / Envoy), Tailscale subnet routing
+
 **Storage:** Longhorn (v1 data engine)
+
 **Identity:** Keycloak providing OIDC SSO for every web UI in the cluster
+
 **Observability:** VictoriaMetrics, Grafana, Jaeger (OpenTelemetry), Hubble
+
 **Messaging:** Kafka (Strimzi, KRaft mode), NATS (JetStream), RabbitMQ
+
 **Serverless:** Knative Serving + Eventing (backed by Kafka)
+
 **Dev Platform:** Coder, Temporal, GitHub Actions runners (ARC), HCP Terraform agents, Camel K
+
 **GPU/AI:** NVIDIA device plugin, SR-IOV device plugin, Multus CNI for RDMA interfaces
+
 
 ## What I'm learning right now
 
 My current focus is on **RDMA and SR-IOV** — figuring out how to get multi-node GPU training working efficiently across the two DGX Sparks using the 200 Gbps ConnectX-7 interconnect. It's been a deep rabbit hole involving:
 
 SR-IOV Virtual Functions on Talos Linux (which has a read-only root filesystem)
+
 Multus CNI for secondary network interfaces
+
 NCCL configuration for GPU-Direct RDMA
+
 The gap between "it works in a single node" and "it works across nodes"
 
 Read more in the [journal](/posts/).
