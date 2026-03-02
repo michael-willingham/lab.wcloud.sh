@@ -16,7 +16,7 @@ This site is a living document. I use it to track what I'm building, what I'm le
 | `talos-7aj-lwl` | NVIDIA DGX Spark | GB10 Grace Blackwell (20c ARM) | 128 GB | Control plane + GPU workloads |
 | `talos-ysi-4k0` | NVIDIA DGX Spark | GB10 Grace Blackwell (20c ARM) | 128 GB | Control plane + GPU workloads |
 
-**Totals:** 56 cores, 448 GB RAM, 2 PFLOPS FP4 AI compute.
+**Totals:** 56 cores, 448 GB RAM, ~3.4 PFLOPS FP4 AI compute.
 
 The two DGX Sparks are connected via a **200 Gbps QSFP DAC** direct-attach cable using Mellanox ConnectX-7 NICs with SR-IOV, enabling GPU-Direct RDMA for multi-node training with [NCCL](https://developer.nvidia.com/nccl).
 

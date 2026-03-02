@@ -20,7 +20,7 @@ All three nodes serve as both control-plane and worker nodes.
 
 The DGX Spark is NVIDIA's desktop AI workstation, built around the **GB10 Grace Blackwell** superchip:
 
-- **1 PFLOP FP4** AI compute per unit (2 PFLOPS total across the pair)
+- **1 PFLOP FP4** AI compute per unit (plus ~1.4 PFLOPS from the RTX 5070 Ti — ~3.4 PFLOPS total across the cluster)
 - **128 GB unified memory** shared between CPU and GPU — no PCIe bottleneck
 - **ARM64 (Grace CPU)** — 20 Cortex-A720 cores
 - **ConnectX-7 NIC** — Mellanox 200 Gbps QSFP56, SR-IOV capable
