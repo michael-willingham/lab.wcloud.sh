@@ -1,0 +1,18 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "willingham-k8s"
+
+[params]
+  displayName = "English"
+  isoCode = "en"
+  dateFormat = "2 January 2006"
+  description = "Homelab Kubernetes cluster documentation and learning journal"
+
+[params.author]
+  name = "Michael Willingham"
+  headline = "homelab kubernetes & gpu infrastructure"
+  bio = "homelab kubernetes & gpu infrastructure"
+  links = [
+    { github = "https://github.com/michael-willingham" },
+  ]
