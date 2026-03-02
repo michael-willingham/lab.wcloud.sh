@@ -12,7 +12,7 @@ The cluster runs real workloads — development environments, CI runners, workfl
 ## About the cluster
 
 - **3 nodes:** 1 custom AMD64 PC + 2 NVIDIA DGX Sparks (ARM64)
-- **448 GB RAM, 2 PFLOPS FP4** AI compute
+- **448 GB RAM, ~3.4 PFLOPS FP4** AI compute
 - **200 Gbps RDMA interconnect** between the DGX Sparks
 - **Talos Linux** — immutable, API-driven, no SSH
 - **GitOps via FluxCD** — every change goes through Git
