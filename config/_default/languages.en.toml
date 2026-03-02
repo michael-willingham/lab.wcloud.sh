@@ -1,7 +1,7 @@
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "willingham-k8s"
+title = "wcloud-lab"
 
 [params]
   displayName = "English"
