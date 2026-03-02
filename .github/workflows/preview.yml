@@ -1,56 +1,41 @@
-name: Deploy PR Preview
+name: PR Preview
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened, closed]
     branches: [main]
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: preview-${{ github.event.pull_request.number }}
   cancel-in-progress: true
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
-  build:
+  preview:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Hugo
+      - if: github.event.action != 'closed'
+        name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: "latest"
           extended: true
 
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
-
-      - name: Build
+      - if: github.event.action != 'closed'
+        name: Build
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
           TZ: America/Chicago
-        run: hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+        run: hugo --minify --baseURL "https://lab.wcloud.sh/pr-preview/pr-${{ github.event.pull_request.number }}/"
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy or cleanup preview
+        uses: rossjrw/pr-preview-action@v1
         with:
-          path: public/
-
-  deploy-preview:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: preview-${{ github.event.pull_request.number }}
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy preview
-        id: deployment
-        uses: actions/deploy-pages@v4
-        with:
-          preview: true
+          source-dir: public/
