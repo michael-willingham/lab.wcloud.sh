@@ -8,7 +8,7 @@ A 3-node Kubernetes cluster running on [Talos Linux](https://www.talos.dev/), ma
 > **Note:**
 This site is a living document. I use it to track what I'm building, what I'm learning, and what I still don't understand.
 
-## The hardware
+## 🖥️ The hardware
 
 | Node | Hardware | CPU | RAM | Role |
 |------|----------|-----|-----|------|
@@ -20,7 +20,7 @@ This site is a living document. I use it to track what I'm building, what I'm le
 
 The two DGX Sparks are connected via a **200 Gbps QSFP DAC** direct-attach cable using Mellanox ConnectX-7 NICs with SR-IOV, enabling GPU-Direct RDMA for multi-node training with [NCCL](https://developer.nvidia.com/nccl).
 
-## What's running
+## 🚀 What's running
 
 The cluster runs a full platform stack — not because everything is needed, but because each component is something I wanted to understand deeply.
 
@@ -43,7 +43,7 @@ The cluster runs a full platform stack — not because everything is needed, but
 **GPU/AI:** NVIDIA device plugin, SR-IOV device plugin, Multus CNI for RDMA interfaces
 
 
-## What I'm learning right now
+## 🧠 What I'm learning right now
 
 My current focus is on **RDMA and SR-IOV** — figuring out how to get multi-node GPU training working efficiently across the two DGX Sparks using the 200 Gbps ConnectX-7 interconnect. It's been a deep rabbit hole involving:
 
@@ -57,7 +57,7 @@ The gap between "it works in a single node" and "it works across nodes"
 
 Read more in the [journal](/posts/).
 
-## Design philosophy
+## 🏗️ Design philosophy
 
 A few deliberate choices:
 
