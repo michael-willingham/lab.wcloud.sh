@@ -13,7 +13,7 @@ Everything in the cluster is deployed via FluxCD Kustomizations, organized in a 
 {{< mermaid >}}
 graph TD
     NS["namespaces"] --> CRDs["crds"]
-    NS --> Routes["routes"]
+    CRDs --> Routes["routes"]
     CRDs --> Base["base<br/><small>cert-manager, ESO, MetalLB,<br/>Longhorn, kgateway</small>"]
     Base --> Operators["operators<br/><small>Strimzi, OLM, Percona,<br/>KEDA, Dragonfly, etc.</small>"]
     Operators --> Network["network<br/><small>MetalLB pools, L2Adv,<br/>Gateway, HTTPRoutes</small>"]
@@ -21,7 +21,7 @@ graph TD
     Operators --> DevPlatform["dev-platform<br/><small>Coder, ARC, TFC agents,<br/>Camel K</small>"]
     Operators --> Observability["observability<br/><small>VMKS, Jaeger,<br/>Headlamp</small>"]
     Operators --> Security["security<br/><small>Keycloak</small>"]
-    Security --> Argo["argo<br/><small>ArgoCD, Workflows,<br/>Events</small>"]
+    Operators --> Argo["argo<br/><small>ArgoCD, Workflows,<br/>Events</small>"]
     Observability --> VPA["vpa<br/><small>VPA resources</small>"]
 {{< /mermaid >}}
 
@@ -32,7 +32,7 @@ Each box is a FluxCD Kustomization pointing to a directory in the [Git repositor
 - **Namespaces first** — every other resource needs its namespace to exist.
 - **CRDs before base** — operators like cert-manager need their CRDs registered before the HelmRelease can create CRs.
 - **Base before operators** — cert-manager needs to be running before anything that needs TLS certificates. ESO needs to be running before anything that needs secrets from Infisical.
-- **Security (Keycloak) before Argo** — ArgoCD and Argo Workflows both authenticate via Keycloak OIDC.
+- **Security and Argo deploy in parallel** — ArgoCD configures Keycloak OIDC endpoints, but doesn't need Keycloak running to deploy. Login works once Keycloak comes up naturally.
 
 ## Traffic flow
 
