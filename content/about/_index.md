@@ -22,9 +22,10 @@ See the [infrastructure](/infrastructure/) section for the full breakdown.
 
 ## About me
 
-I'm Michael Willingham. I build things to understand them.
+I'm Michael Willingham — software engineer on the Fleet Automation team at [NMC²](https://nmc2.com) (NorthMark Compute & Cloud), a private data center and high-performance compute infrastructure company. You might have spotted the logo on a [Williams Racing F1 car](https://www.williamsf1.com/posts/e8706092-c4f2-4db1-a91a-e1a8a2857458/atlassian-williams-racing-nmc2-official-launch-partner). Outside of work, I run this homelab to go deeper on the same kinds of problems: Kubernetes, GPU scheduling, RDMA networking, and platform engineering.
 
-- [GitHub](https://github.com/willingham-cloud)
+- [GitHub](https://github.com/michael-willingham)
+- [LinkedIn](https://www.linkedin.com/in/michaelwillingham/)
 
 ## About the tech
 

@@ -22,8 +22,3 @@
   name = "About"
   pageRef = "about"
   weight = 5
-
-[[main]]
-  name = "Tags"
-  pageRef = "tags"
-  weight = 5
