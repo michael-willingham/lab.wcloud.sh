@@ -1,0 +1,8 @@
+:root {
+  --font-sans: 'Libre Baskerville', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+.main-menu > a.text-base {
+  font-family: 'JetBrains Mono', var(--font-mono);
+}

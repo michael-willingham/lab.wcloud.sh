@@ -1,5 +1,5 @@
 ---
-title: "wcloud-lab"
+title: "Willingham Cloud"
 description: "A homelab Kubernetes cluster built for learning GPU infrastructure, RDMA networking, and platform engineering."
 ---
 
