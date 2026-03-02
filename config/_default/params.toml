@@ -54,3 +54,7 @@ enableCodeCopy = true
   groupByYear = false
   cardView = true
   cardViewScreenWidth = false
+
+[umamiAnalytics]
+  websiteid = "3025d29c-4520-445c-b40d-22f801a6c874"
+  domain = "cloud.umami.is"
