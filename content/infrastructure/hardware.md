@@ -2,7 +2,7 @@
 title: "Hardware"
 date: 2026-03-01
 weight: 10
-tags: ["hardware", "dgx-spark", "rdma"]
+tags: ["hardware", "dgx-spark", "rdma", "blackwell", "5070-ti"]
 summary: "Three nodes, two architectures, one 200 Gbps cable."
 ---
 
@@ -77,3 +77,22 @@ graph TD
 ```
 
 Each node connects to the home network via 1 GbE for management and general traffic. The 200 Gbps link is exclusively for inter-DGX GPU communication.
+
+## All-Blackwell GPU cluster
+
+Every node in the cluster has a Blackwell-generation GPU:
+
+| Node | GPU | Architecture | Compute Capability |
+|------|-----|-------------|-------------------|
+| `talos-76w-3r0` | RTX 5070 Ti | Blackwell (GB203) | sm_120 |
+| `talos-7aj-lwl` | GB10 (DGX Spark) | Blackwell (GB10B) | sm_100 |
+| `talos-ysi-4k0` | GB10 (DGX Spark) | Blackwell (GB10B) | sm_100 |
+
+Having a uniform GPU generation across the cluster — despite mixed CPU architectures (AMD64 + ARM64) — means every node supports the same Blackwell features:
+
+- **FP4 inference** — Blackwell's headline precision, delivering up to 2x throughput over FP8. Useful for experimenting with 4-bit quantized model serving.
+- **FP8 training and inference** — second-gen FP8 support with improved accuracy via the Transformer Engine.
+- **NVIDIA Transformer Engine** — automatic mixed-precision at the layer level. Available on every node, so I can test TE-accelerated training on both the DGX Sparks (multi-node) and the 5070 Ti (single-node dev iteration).
+- **Consistent CUDA toolkit** — no need for multiple code paths or per-node compatibility workarounds. A container built for Blackwell runs on any node.
+
+This also makes the cluster a useful testbed for Blackwell-specific features as NVIDIA rolls them out — any new CUDA capability that targets Blackwell compute capability is immediately available across the entire cluster.

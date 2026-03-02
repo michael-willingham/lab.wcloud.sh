@@ -16,6 +16,8 @@ Each DGX Spark has:
 
 The two units are connected point-to-point via a QSFP56 DAC cable. No switch, no hops.
 
+The Ryzen node also has an **RTX 5070 Ti** (Blackwell GB203), giving the cluster an all-Blackwell GPU setup. This means uniform support for FP4/FP8 precision, Transformer Engine, and consistent CUDA compute capabilities across every node — useful for developing on the 5070 Ti and deploying to the DGX Sparks without compatibility concerns.
+
 ## The software stack
 
 Getting GPUs and RDMA working in Kubernetes on Talos Linux required assembling several components:
